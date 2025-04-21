@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Server-Client Showcase
 
-## Getting Started
+A demonstration project showcasing Next.js 15 and React 19 features, focusing on server and client components, parallel data fetching, and state management with zustand.
 
-First, run the development server:
+## 🚀 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This project implements two key features to demonstrate proficiency with Next.js 15 and React 19:
+
+1. **Server data fetching**: Server Components & parallel data fetching
+2. **Client state management**: Client Components & state management with optimized navigation
+
+## 🛠️ Tech Stack
+
+- Next.js 15 (App Router)
+- React 19 + Hooks
+- TypeScript 5
+- Tailwind CSS 4
+- Zustand 5 (client state)
+- @tanstack/react-query 5
+
+## 📋 Features
+
+### Server-Side Data Fetching
+
+- Parallel requests with caching
+- Suspense boundaries with loading UI
+- ErrorBoundary with user-friendly fallback
+
+### Client-Side State Management
+
+- Client components with Zustand store
+- State persistence across routes
+- Optimized navigation with Next.js Link prefetching
+
+## 🏗️ Project Structure
+
+```
+src/
+├── app/                            # Next.js app directory
+│   ├── layout.tsx                  # Root layout
+│   ├── page.tsx                    # Home page
+│   ├── server-data-fetching/       # Server components showcase
+│   └── client-state-management/    # Client components showcase
+├── components/                     # Shared UI components
+├── utils/                          # Utility functions
+├── stores/                         # Zustand store
+└── types/                          # TypeScript definitions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/vamo89/next-server-client-showcase
+   cd next-server-client-showcase
+   ```
 
-## Learn More
+2. **Install dependencies**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Run the development server**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
