@@ -1,5 +1,5 @@
 import { User } from "@/types/api";
-
+import { nameToCamelCase } from "@/utils/nameToCamelCase";
 interface UserProfileProps {
   user: User;
 }
@@ -59,17 +59,9 @@ export const UserProfile = ({ user }: UserProfileProps) => {
         <div>
           <h2 className="text-2xl font-semibold text-gray-800">
             {user.name
-              ? `${user.name.firstname
-                  .split("")
-                  .map((char, index) =>
-                    index === 0 ? char.toUpperCase() : char
-                  )
-                  .join("")} ${user.name.lastname
-                  .split("")
-                  .map((char, index) =>
-                    index === 0 ? char.toUpperCase() : char
-                  )
-                  .join("")}`
+              ? `${nameToCamelCase(user.name.firstname)} ${nameToCamelCase(
+                  user.name.lastname
+                )}`
               : user.username.charAt(0).toUpperCase()}
           </h2>
           <p className="text-gray-500">@{user.username}</p>
