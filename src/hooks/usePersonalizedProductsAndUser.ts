@@ -1,15 +1,16 @@
 "use client";
 
 import { useQueries } from "@tanstack/react-query";
-import { getProducts } from "@/services/api/products";
+import { getPersonalizedProducts } from "@/services/api/products";
 import { getUser } from "@/services/api/users";
 
-export const useProductsAndUser = (userId: number = 1) => {
+export const usePersonalizedProductsAndUser = (userId: number = 1) => {
   const results = useQueries({
     queries: [
       {
-        queryKey: ["products"],
-        queryFn: getProducts,
+        // Simulates a query that returns personalized products, so depends on userId
+        queryKey: ["products", userId],
+        queryFn: () => getPersonalizedProducts(userId),
       },
       {
         queryKey: ["user", userId],

@@ -1,11 +1,12 @@
 "use client";
 
 import { Products, ProductsSkeleton } from "@/components/Products";
-import { useProductsAndUser } from "@/hooks/useQueries";
+import { usePersonalizedProductsAndUser } from "@/hooks/usePersonalizedProductsAndUser";
 import { nameToCamelCase } from "@/utils/nameToCamelCase";
 
 export default function ClientProductSection() {
-  const { products, user, isLoading, isError } = useProductsAndUser();
+  const { products, user, isLoading, isError } =
+    usePersonalizedProductsAndUser();
 
   if (isLoading) {
     return (

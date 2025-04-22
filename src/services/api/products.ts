@@ -31,6 +31,34 @@ export async function getProducts(): Promise<Product[]> {
 }
 
 /**
+ * Fetches all products from the API
+ */
+export async function getPersonalizedProducts(
+  userId: number
+): Promise<Product[]> {
+  try {
+    // Query parameter just to showcase that this is a personalized query
+    const response = await fetch(`${BASE_URL}/products?userId=${userId}`, {
+      next: {
+        revalidate: PRODUCTS_REVALIDATE_TIME_SECONDS,
+        tags: ["products"],
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch products: ${response.status}`);
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, Math.random() * 2000));
+
+    return response.json();
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error;
+  }
+}
+
+/**
  * Fetches a single product by ID
  */
 export async function getProductById(id: number): Promise<Product> {
