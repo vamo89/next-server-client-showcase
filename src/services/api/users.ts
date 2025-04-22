@@ -7,7 +7,6 @@ import { BASE_URL, USERS_REVALIDATE_TIME_SECONDS } from "@/utils/constants";
 export async function getUser(id: number): Promise<User> {
   try {
     const response = await fetch(`${BASE_URL}/users/${id}`, {
-      // Next.js 15 cache settings
       next: {
         revalidate: USERS_REVALIDATE_TIME_SECONDS,
         tags: [`user-${id}`],
