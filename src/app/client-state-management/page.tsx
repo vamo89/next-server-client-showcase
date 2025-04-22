@@ -1,20 +1,6 @@
-import { getProducts } from "@/services/api/products";
-import { Products, ProductsSkeleton } from "@/components/Products";
-import { Suspense } from "react";
+import ClientProductSection from "@/app/client-state-management/ClientProductSection";
 
-async function ProductSection() {
-  const products = await getProducts();
-  return (
-    <Products
-      products={products}
-      hasLink
-      hasCart
-      linkBasePath="/client-state-management/product"
-    />
-  );
-}
-
-export default async function ClientStateManagementPage() {
+export default function ClientStateManagementPage() {
   return (
     <div className="space-y-10">
       <div>
@@ -24,9 +10,7 @@ export default async function ClientStateManagementPage() {
           persist as you navigate between pages. You can access the product
           pages by clicking on the product image.
         </p>
-        <Suspense fallback={<ProductsSkeleton />}>
-          <ProductSection />
-        </Suspense>
+        <ClientProductSection />
       </div>
     </div>
   );
