@@ -18,6 +18,8 @@ export async function getProducts(): Promise<Product[]> {
       throw new Error(`Failed to fetch products: ${response.status}`);
     }
 
+    await new Promise((resolve) => setTimeout(resolve, Math.random() * 2000));
+
     return response.json();
   } catch (error) {
     console.error("Error fetching products:", error);

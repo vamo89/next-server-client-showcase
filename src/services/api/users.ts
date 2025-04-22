@@ -18,6 +18,8 @@ export async function getUser(id: number): Promise<User> {
       throw new Error(`Failed to fetch user ${id}: ${response.status}`);
     }
 
+    await new Promise((resolve) => setTimeout(resolve, Math.random() * 2000));
+
     return response.json();
   } catch (error) {
     console.error(`Error fetching user ${id}:`, error);
