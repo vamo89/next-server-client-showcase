@@ -14,7 +14,7 @@ interface ProductsProps {
 /**
  * Skeleton loader for the Products component
  */
-export function ProductsSkeleton() {
+export const ProductsSkeleton = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-pulse">
       {Array.from({ length: PRODUCTS_SKELETON_COUNT }).map((_, index) => (
@@ -36,7 +36,7 @@ export function ProductsSkeleton() {
       ))}
     </div>
   );
-}
+};
 
 /**
  * Server component for rendering product items, used on both pages
