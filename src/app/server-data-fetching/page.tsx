@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { getProducts } from "@/services/api/products";
 import { getUser } from "@/services/api/users";
-import { ProductList, ProductListSkeleton } from "@/components/ProductList";
+import { Products, ProductsSkeleton } from "@/components/Products";
 import { UserProfile, UserProfileSkeleton } from "@/components/UserProfile";
 
 async function UserProfileSection() {
@@ -32,7 +32,7 @@ async function ProductListSection() {
 
   return (
     <ProductSectionWrapper title={`Products (${products.length})`}>
-      <ProductList products={products} />
+      <Products products={products} />
     </ProductSectionWrapper>
   );
 }
@@ -52,7 +52,7 @@ export default async function ServerDataFetchingPage() {
       <Suspense
         fallback={
           <ProductSectionWrapper title="Products">
-            <ProductListSkeleton />
+            <ProductsSkeleton />
           </ProductSectionWrapper>
         }
       >
