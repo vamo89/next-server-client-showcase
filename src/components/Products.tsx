@@ -14,7 +14,9 @@ interface ProductsProps {
 /**
  * Skeleton loader for the Products component
  */
-export const ProductsSkeleton = () => {
+export const ProductsSkeleton = ({
+  hasCart = false,
+}: Pick<ProductsProps, "hasCart">) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-pulse">
       {Array.from({ length: PRODUCTS_SKELETON_COUNT }).map((_, index) => (
@@ -29,9 +31,11 @@ export const ProductsSkeleton = () => {
               <div className="h-6 bg-gray-300 rounded w-1/4"></div>
             </div>
           </div>
-          <div className="px-4 pb-4">
-            <div className="h-10 bg-gray-300 rounded w-full"></div>
-          </div>
+          {hasCart && (
+            <div className="px-4 pb-4">
+              <div className="h-10 bg-gray-300 rounded w-full"></div>
+            </div>
+          )}
         </div>
       ))}
     </div>

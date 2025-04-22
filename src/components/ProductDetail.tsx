@@ -8,7 +8,29 @@ interface ProductDetailProps {
   product: Product;
 }
 
-export default function ProductDetail({ product }: ProductDetailProps) {
+export const ProductDetailSkeleton = () => {
+  return (
+    <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+      <div className="flex flex-col md:flex-row">
+        <div className="md:w-1/2 p-6 flex items-center justify-center bg-gray-50">
+          <div className="relative h-80 w-full">
+            <div className="h-80 bg-gray-300 w-full"></div>
+          </div>
+        </div>
+        <div className="md:w-1/2 p-6 flex flex-col">
+          <div className="h-7 bg-gray-300 rounded w-3/4 mb-4"></div>
+          <div className="h-4 bg-gray-300 rounded w-1/2 mb-4"></div>
+          <div className="h-7 bg-gray-300 rounded w-1/6 mb-4"></div>
+          <div className="h-4 bg-gray-300 rounded w-1/4 mb-4"></div>
+          <div className="h-4 bg-gray-300 rounded w-1/4 mb-4"></div>
+          <div className="h-4 bg-gray-300 rounded w-1/4 mb-4"></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const ProductDetail = ({ product }: ProductDetailProps) => {
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden">
       <div className="flex flex-col md:flex-row">
@@ -62,4 +84,4 @@ export default function ProductDetail({ product }: ProductDetailProps) {
       </div>
     </div>
   );
-}
+};
