@@ -3,13 +3,13 @@ import ClientProductPage from "@/app/client-state-management/product/[id]/Client
 import Link from "next/link";
 
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const productId = parseInt(params.id);
+export default async function ProductPage({ params }: ProductPageProps) {
+  const productId = parseInt((await params).id);
 
   if (isNaN(productId)) {
     notFound();
