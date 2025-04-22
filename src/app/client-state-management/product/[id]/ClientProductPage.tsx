@@ -13,7 +13,7 @@ interface ClientProductPageProps {
 export default function ClientProductPage({
   productId,
 }: ClientProductPageProps) {
-  const { data: product, isLoading, isError, error } = useProduct(productId);
+  const { data: product, isLoading, isError } = useProduct(productId);
 
   if (isLoading) {
     return <ProductDetailSkeleton />;
