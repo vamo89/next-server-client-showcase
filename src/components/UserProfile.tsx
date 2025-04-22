@@ -10,8 +10,8 @@ export const UserProfileSkeleton = () => {
       <div className="flex items-start space-x-4">
         <div className="h-16 w-16 rounded-full bg-gray-200"></div>
         <div>
-          <div className="h-6 bg-gray-200 rounded w-48 mb-1"></div>
-          <div className="h-4 bg-gray-200 rounded w-24"></div>
+          <div className="h-8 bg-gray-200 rounded w-48 mb-1"></div>
+          <div className="h-6 bg-gray-200 rounded w-24"></div>
         </div>
       </div>
 
